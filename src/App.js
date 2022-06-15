@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
 import firebase from './firebase';
-import { Button, Navbar, Nav, NavItem, NavDropdown, MenuItem, Container, Carousel } from 'react-bootstrap';
+import { Navbar, Container, Carousel } from 'react-bootstrap';
 import gambar from './img/gambar.jpg';
 import gambar2 from './img/gambar2.jpeg';
 class App extends Component {
@@ -40,40 +40,29 @@ class App extends Component {
   render() {
     return (
       <div id="carouselExampleSlidesOnly" class="carousel" data-ride="carousel">
-        <div class="row">
-          <div class="col-md-12">
+        <div class='container'>
+          <div class='row'>
           <Carousel>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={gambar}
-                alt="First slide"
-              />
-              <Carousel.Caption>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={gambar}
-                alt="Second slide"
-              />
-
-              <Carousel.Caption>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={gambar2}
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>    
+            <img src={gambar} />
+            <img src={gambar2} />
+          </Carousel>
           </div>
+        </div>
+        <div>
+          <Navbar bg="dark" variant="dark">
+            <Container>
+              <Navbar.Brand>
+                <img
+                  alt=""
+                  src={gambar}
+                  width="30"
+                  height="30"
+                  className="d-inline-block align-top"
+                />{' '}
+                SDN 1 BANTENGMATI
+              </Navbar.Brand>
+            </Container>
+          </Navbar>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
