@@ -1,29 +1,32 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import { Button, Container, Grid, TextField } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
-export default class Login extends Component {
+export default class Registrasi extends Component{
     state = {
         email:'',
         password: ''
     }
-    render() {
-         const {email, password} = this.state
-        return (
+    handleChangeField = (e) =>{
+        this.setState({[e.target.name]: e.target.value})
+    }
+    render(){
+        const {email, password} = this.state
+        return(
             <Container>
-                <Grid container style={{ justifyContent: 'center' }}>
-                    <Grid xs="4">
-                        <h2> Login </h2>
-                        <form>
-                            <TextField fullWidth margin="dense" type="email" size="small" value={email} onChange={this.handleChangeField} name="email" label="Email" required />
-                            <TextField fullWidth margin="dense" type="password" size="small" value={password} onChange={this.handleChangeField} name="password" label="Password" required />
-                            <Button fullWidth margin="dense" variant="contained" color="primary">Login</Button>
+                <Grid container justify="center">
+                    <Grid xs="12" md="8" lg="4">
+                        <h2>Halaman Login</h2>
+                        <form onSubmit={this.handleSubmit}>
+                            <TextField type="email" fullWidth margin="dense" variant="outlined" size="small" value={email} onChange={this.handleChangeField} name="email" label="Email" required />
+                            <TextField type="password" fullWidth margin="dense" variant="outlined" size="small" value={password} onChange={this.handleChangeField} name="password" label="Password" required />
+                            <Button type="submit" fullWidth variant="contained" color="primary">Login</Button>
                         </form>
-                        <p>Belum Punya Akun? <Link to="/registrasi">Sign Up</Link></p>
-                        <p>Ingin Masuk Sebagai Guest? <Link to="/App">Guest</Link></p>
+                        <p>Belum punya akun? <Link to="/Registrasi">Registrasi</Link></p>
+                        <p>Ingin masuk sebagai Guest? <Link to="/App">Guest</Link></p>
+                    </Grid>
                 </Grid>
-                </Grid>
-            </Container >
+            </Container>
         )
     }
 }

@@ -3,9 +3,12 @@ import { Button, Container, Grid, TextField } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 
 export default class Registrasi extends Component{
-     state = {
+    state = {
         email:'',
         password: ''
+    }
+    handleChangeField = (e) =>{
+        this.setState({[e.target.name]: e.target.value})
     }
     render(){
         const {email, password} = this.state
